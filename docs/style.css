@@ -1,5 +1,5 @@
 :root {
-  --rojo: #bd0121;
+  --azul: #002c4f;
   --gris-fondo: #f5f5f5;
   --gris-borde: #ddd;
 }
@@ -14,7 +14,7 @@ body {
 }
 
 header {
-  background: var(--rojo);
+  background: var(--azul);
   color: #fff;
   padding: 20px 24px;
 }
