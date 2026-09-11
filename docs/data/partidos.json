@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-09-11T07:28:42.500609+00:00",
+  "competicion": "PRIMERA FUTGAL",
+  "grupo": "GRUPO 4",
+  "jornadas": {
+    "2": [
+      {
+        "equipo_local": "C.D. VELLE",
+        "equipo_visitante": "SPORTING CELANOVA",
+        "arbitro": "ÁLVAREZ YZQUIERDO, ISMAEL",
+        "asistente1": "MARTINEZ RODRIGUEZ, PABLO",
+        "asistente2": "PEREZ OCHANDATEGUI, XABIER",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431163"
+      },
+      {
+        "equipo_local": "C.D. VELLE",
+        "equipo_visitante": "SPORTING CELANOVA",
+        "arbitro": "ÁLVAREZ YZQUIERDO, ISMAEL",
+        "asistente1": "MARTINEZ RODRIGUEZ, PABLO",
+        "asistente2": "PEREZ OCHANDATEGUI, XABIER",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431161"
+      }
+    ]
+  }
+}
