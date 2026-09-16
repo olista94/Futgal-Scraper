@@ -1,11 +1,68 @@
 {
-  "generated_at": "2026-09-15T10:36:22.553601+00:00",
+  "generated_at": "2026-09-16T10:25:13.191647+00:00",
   "competicion": "PRIMERA FUTGAL",
   "grupo": "GRUPO 4",
   "jornadas": {
     "1": [],
     "2": [],
-    "3": [],
+    "3": [
+      {
+        "equipo_local": "C.D. LA PURISIMA",
+        "equipo_visitante": "A PEROXA C.F.",
+        "arbitro": "",
+        "asistente1": "",
+        "asistente2": "",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431170"
+      },
+      {
+        "equipo_local": "A.C.D. POLIGONO SAN CIPRIAN",
+        "equipo_visitante": "C.D. VELLE",
+        "arbitro": "",
+        "asistente1": "",
+        "asistente2": "",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431171"
+      },
+      {
+        "equipo_local": "SPORTING CELANOVA",
+        "equipo_visitante": "ATLETICO VILARIÑO",
+        "arbitro": "",
+        "asistente1": "",
+        "asistente2": "",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431172"
+      },
+      {
+        "equipo_local": "MONTERREY C.F.",
+        "equipo_visitante": "MASIDE F.C.",
+        "arbitro": "",
+        "asistente1": "",
+        "asistente2": "",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431177"
+      },
+      {
+        "equipo_local": "FRANCELOS F.C.",
+        "equipo_visitante": "C.D. MACEDA",
+        "arbitro": "",
+        "asistente1": "",
+        "asistente2": "",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431178"
+      },
+      {
+        "equipo_local": "S.D. NOGUEIRA RAMUIN",
+        "equipo_visitante": "C.D. CORGOMO VILAMARTIN",
+        "arbitro": "",
+        "asistente1": "",
+        "asistente2": "",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431174"
+      },
+      {
+        "equipo_local": "SPORTING CARBALLIÑO",
+        "equipo_visitante": "RAYO 21 C.F.",
+        "arbitro": "",
+        "asistente1": "",
+        "asistente2": "",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431173"
+      }
+    ],
     "4": [],
     "5": []
   }
