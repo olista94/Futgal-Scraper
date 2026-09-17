@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T10:25:13.191647+00:00",
+  "generated_at": "2026-09-17T10:34:30.240011+00:00",
   "competicion": "PRIMERA FUTGAL",
   "grupo": "GRUPO 4",
   "jornadas": {
@@ -29,6 +29,14 @@
         "asistente1": "",
         "asistente2": "",
         "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431172"
+      },
+      {
+        "equipo_local": "LAMELA C.F.",
+        "equipo_visitante": "LOÑOA C.F.",
+        "arbitro": "",
+        "asistente1": "",
+        "asistente2": "",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431175"
       },
       {
         "equipo_local": "MONTERREY C.F.",
