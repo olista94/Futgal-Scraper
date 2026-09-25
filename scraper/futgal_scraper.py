@@ -59,17 +59,24 @@ def build_jornada_url(config: dict, jornada: int) -> str:
 
 
 def find_match_links(soup: BeautifulSoup, base_url: str) -> list[str]:
+    """Cualquier enlace cuyo href contenga NFG_CmpPrevio.
+
+    No filtramos por clase CSS del botón (p.ej. "btn green-meadow btn-sm"
+    o, tras el rediseño de la web en 2026, "btn btn-success btn-sm")
+    porque futgal.es ya ha cambiado esa clase una vez. Los botones
+    "Anterior/Siguiente" usan href="javascript:IrA(...)" y no contienen
+    NFG_CmpPrevio, así que no hay riesgo de cogerlos por error.
+    """
     links = []
     seen = set()
-    for a in soup.select("a.btn.green-meadow.btn-sm"):
-        href = a.get("href", "")
+    for a in soup.find_all("a", href=True):
+        href = a["href"]
         if "NFG_CmpPrevio" in href:
             full = urljoin(base_url, href)
             if full not in seen:
                 seen.add(full)
                 links.append(full)
     return links
-
 
 def extract_teams(soup: BeautifulSoup) -> tuple[str, str]:
     divs = soup.select('div.col-sm-4[style*="text-align:center"]')
