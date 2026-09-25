@@ -78,6 +78,7 @@ def find_match_links(soup: BeautifulSoup, base_url: str) -> list[str]:
                 links.append(full)
     return links
 
+
 def extract_teams(soup: BeautifulSoup) -> tuple[str, str]:
     divs = soup.select('div.col-sm-4[style*="text-align:center"]')
     if len(divs) >= 3:
@@ -90,6 +91,18 @@ def extract_teams(soup: BeautifulSoup) -> tuple[str, str]:
 
 
 def extract_officials(soup: BeautifulSoup) -> dict:
+    """Extrae árbitro/asistentes de la tabla 'ÁRBITROS'.
+
+    Soporta dos formatos, porque futgal.es ya ha cambiado de plantilla
+    una vez (2026) y puede volver a hacerlo:
+
+    - Formato nuevo (desde el rediseño de 2026): sin etiquetas, 3 celdas
+      con clase 'txtficha' en orden fijo (árbitro, asistente1,
+      asistente2), cada nombre con prefijo 'D. '/'Dª. ' y sufijo tipo
+      '(Comité )' que hay que limpiar.
+    - Formato antiguo: filas <strong>Árbitro</strong> /
+      <strong>Asistente</strong> seguidas de una fila con el nombre.
+    """
     data = {"arbitro": "", "asistente1": "", "asistente2": ""}
 
     title_td = soup.find(
@@ -102,6 +115,25 @@ def extract_officials(soup: BeautifulSoup) -> dict:
     if not table:
         return data
 
+    # --- Formato nuevo: celdas con clase txtficha, en orden fijo ---
+    txtficha_cells = table.find_all("td", class_="txtficha")
+    if txtficha_cells:
+        names = []
+        for td in txtficha_cells:
+            text = td.get_text(" ", strip=True)
+            text = re.sub(r"^(D|Dª|Dna)\.\s*", "", text)  # quita "D. " / "Dª. "
+            text = re.sub(r"\s*\([^)]*\)\s*$", "", text).strip()  # quita "(Comité )"
+            if text:
+                names.append(text)
+        if len(names) >= 1:
+            data["arbitro"] = names[0]
+        if len(names) >= 2:
+            data["asistente1"] = names[1]
+        if len(names) >= 3:
+            data["asistente2"] = names[2]
+        return data
+
+    # --- Formato antiguo: <strong>Árbitro</strong>/<strong>Asistente</strong> ---
     current_label = None
     assistant_count = 0
 
