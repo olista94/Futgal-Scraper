@@ -1,12 +1,85 @@
 {
-  "generated_at": "2026-09-25T06:21:30.168204+00:00",
+  "generated_at": "2026-09-25T06:26:36.473339+00:00",
   "competicion": "PRIMERA FUTGAL",
   "grupo": "GRUPO 4",
   "jornadas": {
     "1": [],
     "2": [],
     "3": [],
-    "4": [],
+    "4": [
+      {
+        "equipo_local": "C.D. CORGOMO VILAMARTIN",
+        "equipo_visitante": "SPORTING CARBALLIÑO",
+        "arbitro": "QUINTAS GARCIA, MIGUEL",
+        "asistente1": "GONZALEZ MARTINEZ, NOA",
+        "asistente2": "REQUEJO FERNANDEZ, DAVID",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431183"
+      },
+      {
+        "equipo_local": "A PEROXA C.F.",
+        "equipo_visitante": "FRANCELOS F.C.",
+        "arbitro": "CARBALLO ALFONSO, BRAIS",
+        "asistente1": "FERNÁNDEZ BERNÁRDEZ , FRAN",
+        "asistente2": "GALLEGO CABANAS, ALICIA",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431179"
+      },
+      {
+        "equipo_local": "RAYO 21 C.F.",
+        "equipo_visitante": "SPORTING CELANOVA",
+        "arbitro": "GONZALEZ CASTRO, MANUEL",
+        "asistente1": "PEREZ OCHANDATEGUI, XABIER",
+        "asistente2": "VASALLO VICENTE, ISMAEL",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431182"
+      },
+      {
+        "equipo_local": "LOÑOA C.F.",
+        "equipo_visitante": "S.D. NOGUEIRA RAMUIN",
+        "arbitro": "RODRIGUEZ FERNANDEZ, ADRIAN",
+        "asistente1": "MENDEZ MARRERO, ALVARO",
+        "asistente2": "CASAL CARBAJOSA, MARIO",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431184"
+      },
+      {
+        "equipo_local": "MASIDE F.C.",
+        "equipo_visitante": "CLUB LEMOS B",
+        "arbitro": "CID SEARA, HUGO",
+        "asistente1": "GONZALEZ MARTINEZ, GABRIEL",
+        "asistente2": "MUJICA PAEZ, WANDA",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431186"
+      },
+      {
+        "equipo_local": "C.D. MACEDA",
+        "equipo_visitante": "MONTERREY C.F.",
+        "arbitro": "ALVES PEREIRA, VICTOR ENMANUEL",
+        "asistente1": "ALCAZAR GONZALEZ, HUGO",
+        "asistente2": "PEREZ OCHANDATEGUI, IBAN",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431187"
+      },
+      {
+        "equipo_local": "C.D. VELLE",
+        "equipo_visitante": "C.D. LA PURISIMA",
+        "arbitro": "ROMERO MACHADO, DANIELA",
+        "asistente1": "MOSQUERA PAEZ, JAIMIES",
+        "asistente2": "MARTIN CARNERO, IAGO",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431180"
+      },
+      {
+        "equipo_local": "ATLETICO VILARIÑO",
+        "equipo_visitante": "A.C.D. POLIGONO SAN CIPRIAN",
+        "arbitro": "LAMELAS BELMONTE, PABLO",
+        "asistente1": "DELGADO GOMEZ, JIMENA",
+        "asistente2": "FEIJOO PAZOS, CELIA",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431181"
+      },
+      {
+        "equipo_local": "C.D. MUIÑOS",
+        "equipo_visitante": "LAMELA C.F.",
+        "arbitro": "ROBLES GONZALEZ, CHRISTIAN",
+        "asistente1": "BORRAJO RODRIGUEZ, IAGO",
+        "asistente2": "PATIÑO REVUELTA, MATEO",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431185"
+      }
+    ],
     "5": []
   }
 }
