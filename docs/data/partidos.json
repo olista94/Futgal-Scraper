@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T11:30:53.814561+00:00",
+  "generated_at": "2026-10-01T11:59:37.971826+00:00",
   "competicion": "PRIMERA FUTGAL",
   "grupo": "GRUPO 4",
   "jornadas": {
@@ -7,7 +7,72 @@
     "2": [],
     "3": [],
     "4": [],
-    "5": [],
+    "5": [
+      {
+        "equipo_local": "SPORTING CARBALLIÑO",
+        "equipo_visitante": "LOÑOA C.F.",
+        "arbitro": "",
+        "asistente1": "",
+        "asistente2": "",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431192"
+      },
+      {
+        "equipo_local": "FRANCELOS F.C.",
+        "equipo_visitante": "MONTERREY C.F.",
+        "arbitro": "",
+        "asistente1": "",
+        "asistente2": "",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431196"
+      },
+      {
+        "equipo_local": "A PEROXA C.F.",
+        "equipo_visitante": "C.D. VELLE",
+        "arbitro": "",
+        "asistente1": "",
+        "asistente2": "",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431188"
+      },
+      {
+        "equipo_local": "A.C.D. POLIGONO SAN CIPRIAN",
+        "equipo_visitante": "RAYO 21 C.F.",
+        "arbitro": "",
+        "asistente1": "",
+        "asistente2": "",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431190"
+      },
+      {
+        "equipo_local": "SPORTING CELANOVA",
+        "equipo_visitante": "C.D. CORGOMO VILAMARTIN",
+        "arbitro": "",
+        "asistente1": "",
+        "asistente2": "",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431191"
+      },
+      {
+        "equipo_local": "S.D. NOGUEIRA RAMUIN",
+        "equipo_visitante": "C.D. MUIÑOS",
+        "arbitro": "",
+        "asistente1": "",
+        "asistente2": "",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431193"
+      },
+      {
+        "equipo_local": "LAMELA C.F.",
+        "equipo_visitante": "MASIDE F.C.",
+        "arbitro": "",
+        "asistente1": "",
+        "asistente2": "",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431194"
+      },
+      {
+        "equipo_local": "C.D. LA PURISIMA",
+        "equipo_visitante": "ATLETICO VILARIÑO",
+        "arbitro": "",
+        "asistente1": "",
+        "asistente2": "",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431189"
+      }
+    ],
     "6": [],
     "7": [],
     "8": [],
