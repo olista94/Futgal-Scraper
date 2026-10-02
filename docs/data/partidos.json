@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T11:59:37.971826+00:00",
+  "generated_at": "2026-10-02T07:57:39.146252+00:00",
   "competicion": "PRIMERA FUTGAL",
   "grupo": "GRUPO 4",
   "jornadas": {
@@ -9,67 +9,75 @@
     "4": [],
     "5": [
       {
+        "equipo_local": "CLUB LEMOS B",
+        "equipo_visitante": "C.D. MACEDA",
+        "arbitro": "LOPEZ BERMUDEZ, ADRIAN",
+        "asistente1": "FEIJOO TRIGO, EDUARDO",
+        "asistente2": "ALVAREZ ARGEREY, LIDIA",
+        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431195"
+      },
+      {
         "equipo_local": "SPORTING CARBALLIÑO",
         "equipo_visitante": "LOÑOA C.F.",
-        "arbitro": "",
-        "asistente1": "",
-        "asistente2": "",
+        "arbitro": "BOIMORTO BLANCO, UXIA",
+        "asistente1": "MÁRQUEZ PÉREZ, GABRIEL",
+        "asistente2": "GALLEGO CABANAS, ALICIA",
         "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431192"
       },
       {
         "equipo_local": "FRANCELOS F.C.",
         "equipo_visitante": "MONTERREY C.F.",
-        "arbitro": "",
-        "asistente1": "",
-        "asistente2": "",
+        "arbitro": "ÁLVAREZ YZQUIERDO, ISMAEL",
+        "asistente1": "ÁLVAREZ RODRÍGUEZ, SAMUEL",
+        "asistente2": "RODRIGUEZ RODRIGUEZ, EDYAN",
         "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431196"
       },
       {
         "equipo_local": "A PEROXA C.F.",
         "equipo_visitante": "C.D. VELLE",
-        "arbitro": "",
-        "asistente1": "",
-        "asistente2": "",
+        "arbitro": "CERREDA FERRON, DANIEL",
+        "asistente1": "RIAL FERNANDEZ, LUCAS",
+        "asistente2": "PEREZ CASARES, ANDRE",
         "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431188"
       },
       {
         "equipo_local": "A.C.D. POLIGONO SAN CIPRIAN",
         "equipo_visitante": "RAYO 21 C.F.",
-        "arbitro": "",
-        "asistente1": "",
-        "asistente2": "",
+        "arbitro": "AÑEL FERNANDEZ, HUGO",
+        "asistente1": "ALCAZAR GONZALEZ, HUGO",
+        "asistente2": "FERNANDEZ GONZALEZ, MATEO",
         "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431190"
       },
       {
         "equipo_local": "SPORTING CELANOVA",
         "equipo_visitante": "C.D. CORGOMO VILAMARTIN",
-        "arbitro": "",
-        "asistente1": "",
-        "asistente2": "",
+        "arbitro": "GUZMAN FALCON, DAVID",
+        "asistente1": "JIMENEZ DOMINGUEZ, MANUEL",
+        "asistente2": "FERNANDEZ CANDELAS, AÑEL",
         "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431191"
       },
       {
         "equipo_local": "S.D. NOGUEIRA RAMUIN",
         "equipo_visitante": "C.D. MUIÑOS",
-        "arbitro": "",
-        "asistente1": "",
-        "asistente2": "",
+        "arbitro": "ALONSO COBELAS, ALEJANDRO",
+        "asistente1": "GONZALEZ BLANCO, MARCO",
+        "asistente2": "FERNANDEZ FERNANDEZ, ANXO",
         "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431193"
       },
       {
         "equipo_local": "LAMELA C.F.",
         "equipo_visitante": "MASIDE F.C.",
-        "arbitro": "",
-        "asistente1": "",
-        "asistente2": "",
+        "arbitro": "MACHADO MOSQUERA, CRISTIAN",
+        "asistente1": "ABELEDO CHOREN, MIRIAM",
+        "asistente2": "LOPEZ BLANCO, VICTOR",
         "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431194"
       },
       {
         "equipo_local": "C.D. LA PURISIMA",
         "equipo_visitante": "ATLETICO VILARIÑO",
-        "arbitro": "",
-        "asistente1": "",
-        "asistente2": "",
+        "arbitro": "ROBLES GONZALEZ, CHRISTIAN",
+        "asistente1": "MARTINEZ PRESAS, ANA",
+        "asistente2": "PATIÑO REVUELTA, MATEO",
         "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431189"
       }
     ],
