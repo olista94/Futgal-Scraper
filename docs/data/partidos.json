@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T10:46:29.192841+00:00",
+  "generated_at": "2026-10-04T11:30:26.674994+00:00",
   "competicion": "PRIMERA FUTGAL",
   "grupo": "GRUPO 4",
   "jornadas": {
@@ -8,14 +8,6 @@
     "3": [],
     "4": [],
     "5": [
-      {
-        "equipo_local": "CLUB LEMOS B",
-        "equipo_visitante": "C.D. MACEDA",
-        "arbitro": "LOPEZ BERMUDEZ, ADRIAN",
-        "asistente1": "FEIJOO TRIGO, EDUARDO",
-        "asistente2": "ALVAREZ ARGEREY, LIDIA",
-        "url": "https://www.futgal.es/pnfg/NPcd/NFG_CmpPrevio?cod_primaria=1000120&CodActa=1431195"
-      },
       {
         "equipo_local": "SPORTING CARBALLIÑO",
         "equipo_visitante": "LOÑOA C.F.",
