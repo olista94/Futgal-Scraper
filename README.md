@@ -19,7 +19,7 @@ docs/                        -> la web estática (esto es lo que sirve GitHub Pa
   index.html
   style.css
   app.js
-  data/partidos.json         -> datos generados (se sobrescribe solo)
+  data/partidos.json         -> histórico acumulado de la temporada
 ```
 
 ## Puesta en marcha (una sola vez)
@@ -59,7 +59,39 @@ docs/                        -> la web estática (esto es lo que sirve GitHub Pa
    los datos reales.
 
 6. Entra en la URL de GitHub Pages: ya deberías ver la tabla con el
-   selector de jornada.
+   selector de jornada, opción «Todas las jornadas» y buscador por equipo
+   o colegiado. Los nombres se muestran en dos líneas: nombre y apellidos.
+
+## Histórico de partidos
+
+El scraper consulta las 34 jornadas configuradas y conserva los partidos
+que ya estaban guardados si Futgal devuelve una jornada vacía, incompleta
+o falla. Los partidos se identifican por su URL: cuando vuelven a aparecer,
+se actualizan sin duplicarlos. Así se mantienen las jornadas que Futgal
+deja de publicar. Se siguen consultando todas para recoger correcciones.
+
+El campo `source` identifica competición, grupo y temporada para no mezclar
+datos al cambiar la configuración. El primer histórico antiguo sin ese
+campo se acepta si coinciden los nombres de competición y grupo; elimina
+el JSON antiguo si cambias de temporada antes de esa primera actualización.
+Si el JSON no se puede leer, la ejecución aborta sin sobrescribirlo.
+
+Un partido que desaparece de Futgal se conserva en el histórico. Si se
+anula definitivamente, su eliminación debe hacerse manualmente en el JSON.
+La fecha «Actualizado» corresponde a la ejecución del scraper, incluso si
+parte de los datos se ha conservado de ejecuciones anteriores.
+
+Se han recuperado de los commits anteriores los partidos de las jornadas
+2 a 5 de esta temporada. La jornada 1 no tenía partidos guardados en Git;
+las siguientes se incorporarán cuando Futgal los publique y el scraper
+pueda extraerlos.
+
+## Comprobar el histórico sin consultar Futgal
+
+```bash
+python -m unittest discover -s tests
+node --test tests/app.test.cjs
+```
 
 ## Cambiar la frecuencia de actualización
 
