@@ -25,19 +25,20 @@ header h1 {
 }
 
 main {
-  max-width: 900px;
+  max-width: 1100px;
   margin: 24px auto;
   padding: 0 16px;
 }
 
 .controls {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 8px;
   margin-bottom: 16px;
 }
 
-select {
+select, input[type="search"] {
   padding: 6px 10px;
   border-radius: 4px;
   border: 1px solid var(--gris-borde);
