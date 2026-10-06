@@ -1,0 +1,60 @@
+const test = require("node:test");
+const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const vm = require("node:vm");
+
+class Element {
+  constructor() { this.children = []; this.textContent = ""; this.value = ""; this.events = {}; }
+  appendChild(child) { this.children.push(child); }
+  addEventListener(type, handler) { this.events[type] = handler; }
+  set innerHTML(value) { this.children = []; }
+}
+
+async function load(data) {
+  const ids = ["estado", "titulo", "actualizado", "jornada", "tabla-body", "busqueda"];
+  const elements = Object.fromEntries(ids.map((id) => [id, new Element()]));
+  const context = vm.createContext({
+    document: { getElementById: (id) => elements[id], createElement: () => new Element() },
+    fetch: async () => ({ ok: true, json: async () => data }),
+  });
+  await vm.runInContext(fs.readFileSync("docs/app.js", "utf8"), context);
+  return elements;
+}
+
+const match = { equipo_local: "Maside", equipo_visitante: "Lemos",
+  arbitro: "QUINTÁS GARCÍA, MIGUEL", asistente1: "SIN COMA", asistente2: "" };
+
+test("round selection, all rounds, names and accent-insensitive search", async () => {
+  const elements = await load({ jornadas: { "2": [match], "3": [match], "34": [] } });
+  const select = elements.jornada;
+  const body = elements["tabla-body"];
+  assert.equal(select.value, "3");
+  assert.equal(select.children[0].textContent, "Todas las jornadas");
+  assert.equal(body.children[0].children.length, 6);
+  assert.equal(body.children[0].children[0].textContent, "3");
+  const official = body.children[0].children[3];
+  assert.equal(official.children[0].textContent, "MIGUEL");
+  assert.equal(official.children[1].textContent, "QUINTÁS GARCÍA");
+  assert.equal(body.children[0].children[4].textContent, "SIN COMA");
+  assert.equal(body.children[0].children[5].textContent, "—");
+  select.value = "todas";
+  select.events.change();
+  assert.equal(body.children.length, 2);
+  assert.equal(body.children[0].children[0].textContent, "2");
+  elements.busqueda.value = "quintas garcia";
+  elements.busqueda.events.input();
+  assert.equal(body.children.length, 2);
+  elements.busqueda.value = "inexistente";
+  elements.busqueda.events.input();
+  assert.equal(body.children.length, 0);
+  assert.match(elements.estado.textContent, /búsqueda/);
+});
+
+test("empty rounds and no-data responses display a clear message", async () => {
+  const elements = await load({ jornadas: { "1": [], "34": [] } });
+  assert.equal(elements.jornada.value, "1");
+  assert.equal(elements["tabla-body"].children.length, 0);
+  assert.match(elements.estado.textContent, /No hay partidos/);
+  const empty = await load({ jornadas: {} });
+  assert.match(empty.estado.textContent, /Todavía no hay jornadas/);
+});
