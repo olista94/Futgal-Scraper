@@ -188,27 +188,63 @@ def scrape_jornada(session: requests.Session, config: dict, jornada: int, delay:
     results = []
     for link in match_links:
         match_soup = fetch(session, link)
-        results.append(parse_match_page(match_soup, link))
+        partido = parse_match_page(match_soup, link)
+        if not partido["equipo_local"] or not partido["equipo_visitante"]:
+            raise ValueError(f"No se pudieron identificar los equipos: {link}")
+        results.append(partido)
         time.sleep(delay)
     return results
 
 
-def scrape_all(config: dict, delay: float = 1.0, fetch=get_soup) -> dict:
+def source_identity(config: dict) -> dict:
+    return {key: str(config.get(key, "")) for key in (
+        "cod_competicion", "cod_grupo", "cod_temporada"
+    )}
+
+
+def merge_matches(previous: list[dict], current: list[dict]) -> list[dict]:
+    """Actualiza partidos por URL y conserva los que ya no publica Futgal."""
+    def key(partido):
+        return partido.get("url") or (
+            partido["equipo_local"], partido["equipo_visitante"]
+        )
+
+    merged = {key(partido): partido for partido in previous}
+    merged.update({key(partido): partido for partido in current})
+    return list(merged.values())
+
+
+def scrape_all(config: dict, delay: float = 1.0, fetch=get_soup,
+               existing_data: dict | None = None) -> dict:
+    existing_data = existing_data or {}
+    identity = source_identity(config)
+    compatible = existing_data.get("source") == identity
+    if "source" not in existing_data:
+        compatible = (
+            existing_data.get("competicion") == config.get("nombre_competicion", "")
+            and existing_data.get("grupo") == config.get("nombre_grupo", "")
+        )
+    previous = existing_data.get("jornadas", {}) if compatible else {}
     session = requests.Session()
-    jornadas_out = {}
+    jornadas_out = {str(j): list(previous.get(str(j), []))
+                    for j in config["jornadas"]}
     for jornada in config["jornadas"]:
         print(f"Jornada {jornada}...")
         try:
-            jornadas_out[str(jornada)] = scrape_jornada(session, config, jornada, delay, fetch=fetch)
-        except requests.RequestException as e:
+            partidos = scrape_jornada(session, config, jornada, delay, fetch=fetch)
+            jornadas_out[str(jornada)] = merge_matches(jornadas_out[str(jornada)], partidos)
+            print(f"  {len(partidos)} recuperados; {len(jornadas_out[str(jornada)])} guardados")
+        except (requests.RequestException, ValueError) as e:
             print(f"  ✗ Error en jornada {jornada}: {e}")
-            jornadas_out[str(jornada)] = []
+            print("  Se conserva el histórico de esta jornada")
         time.sleep(delay)
+    session.close()
 
     return {
         "generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "competicion": config.get("nombre_competicion", ""),
         "grupo": config.get("nombre_grupo", ""),
+        "source": identity,
         "jornadas": jornadas_out,
     }
 
@@ -221,11 +257,16 @@ def main():
     args = parser.parse_args()
 
     config = json.loads(Path(args.config).read_text(encoding="utf-8"))
-    data = scrape_all(config, delay=args.delay)
-
     out_path = Path(args.output)
+    # Si el histórico está corrupto, aborta antes de sobrescribirlo.
+    existing_data = (json.loads(out_path.read_text(encoding="utf-8"))
+                     if out_path.exists() else {})
+    data = scrape_all(config, delay=args.delay, existing_data=existing_data)
+
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    temp_path = out_path.with_name(out_path.name + ".tmp")
+    temp_path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    temp_path.replace(out_path)
     print(f"\n✔ Guardado en {out_path}")
 
 
