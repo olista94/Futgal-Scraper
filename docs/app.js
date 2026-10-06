@@ -4,6 +4,7 @@ async function main() {
   const actualizadoEl = document.getElementById("actualizado");
   const selectEl = document.getElementById("jornada");
   const tbody = document.getElementById("tabla-body");
+  const busquedaEl = document.getElementById("busqueda");
 
   let data;
 
@@ -45,10 +46,10 @@ async function main() {
     return;
   }
 
-  /*
-   * Rellena el selector con todas las jornadas.
-   * En este caso aparecerán de la 1 a la 34.
-   */
+  const optTodas = document.createElement("option");
+  optTodas.value = "todas";
+  optTodas.textContent = "Todas las jornadas";
+  selectEl.appendChild(optTodas);
   for (const j of jornadas) {
     const opt = document.createElement("option");
 
@@ -106,21 +107,32 @@ async function main() {
   }
 
   function render(jornada) {
-    const partidos = data.jornadas[jornada] || [];
+    const seleccionadas = jornada === "todas" ? jornadas : [jornada];
+    const normalizar = (texto) => String(texto || "").normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("es-ES");
+    const consulta = normalizar(busquedaEl.value).trim();
+    const partidos = seleccionadas.flatMap((j) =>
+      (data.jornadas[j] || []).map((partido) => ({ ...partido, jornada: j }))
+    ).filter((partido) => !consulta || normalizar([
+      partido.equipo_local, partido.equipo_visitante, partido.arbitro,
+      partido.asistente1, partido.asistente2
+    ].join(" ")).includes(consulta));
 
     tbody.innerHTML = "";
 
     if (partidos.length === 0) {
-      estadoEl.textContent = "No hay partidos para esta jornada.";
+      estadoEl.textContent = consulta ? "No hay partidos que coincidan con la búsqueda."
+        : "No hay partidos guardados para esta selección.";
       return;
     }
 
-    estadoEl.textContent = "";
+    estadoEl.textContent = partidos.length + " partidos";
 
     for (const p of partidos) {
       const tr = document.createElement("tr");
 
       const campos = [
+        "jornada",
         "equipo_local",
         "equipo_visitante",
         "arbitro",
@@ -151,6 +163,7 @@ async function main() {
   selectEl.addEventListener("change", () => {
     render(selectEl.value);
   });
+  busquedaEl.addEventListener("input", () => render(selectEl.value));
 
   /*
    * IMPORTANTE:
