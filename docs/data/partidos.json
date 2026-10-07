@@ -1,7 +1,12 @@
 {
-  "generated_at": "2026-10-06T12:21:37.505772+00:00",
+  "generated_at": "2026-10-07T12:13:44.736332+00:00",
   "competicion": "PRIMERA FUTGAL",
   "grupo": "GRUPO 4",
+  "source": {
+    "cod_competicion": "26991076",
+    "cod_grupo": "26991081",
+    "cod_temporada": "22"
+  },
   "jornadas": {
     "1": [],
     "2": [
@@ -329,10 +334,5 @@
     "32": [],
     "33": [],
     "34": []
-  },
-  "source": {
-    "cod_competicion": "26991076",
-    "cod_grupo": "26991081",
-    "cod_temporada": "22"
   }
 }
