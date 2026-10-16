@@ -2,7 +2,7 @@ name: Actualizar datos de partidos
 
 on:
   schedule:
-    # Todos los días a las 06:00 UTC (ajusta a tu gusto)
+    # Todos los días a las 07:00 UTC (sólo los viernes)
     - cron: "0 7 * * 5"   
   workflow_dispatch: {}   # permite lanzarlo a mano desde la pestaña Actions
   push:
